@@ -29,6 +29,6 @@ jobs:
     - name: Start db
       run: 'python db.py'
     - name: Start application
-      run: 'python app.py'
+      run: 'python app.py >/dev/null'
     #- name: Test application
     #  run: 'mvn test'
