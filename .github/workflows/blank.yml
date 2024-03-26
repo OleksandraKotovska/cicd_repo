@@ -12,42 +12,26 @@ jobs:
   my_first_job:
     runs-on: ubuntu-latest
     steps:
-    
     - name: Install Python
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
-
-    - name: Show Python version
       with:
         python-version: '3.10'
+    - name: Show Python version
     - run: 'python -version'
-
     - name: Checkout code
     - uses: actions/checkout@v3
       with:
         ref: jenk
-
     - name: Show directory
     - run: 'pwd'
-
     - name: List files
     - run: 'ls -al'
-
     - name: Install Dependencies
-      with:
-        python-version: '3.10'
-        cache: 'pip' # caching pip dependencies
     - run: 'pip install -r requirements.txt'
-    
     - name: Start db
-      with:
-        python-version: '3.10'
     - run: 'python db.py'
-
     - name: Start application
-      with:
-        python-version: '3.10'
     - run: 'python app.py'
-
     #- name: Test application
     #- run: 'mvn test'
