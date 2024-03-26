@@ -20,27 +20,27 @@ jobs:
         python-version: '3.10'
 
     - name: Show Python version
-      run: 'python -version'
+    - run: 'python -version'
 
     - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
       with:
         ref: jenk
 
     - name: Show directory
-      run: 'pwd'
+    - run: 'pwd'
 
     - name: List files
-      run: 'ls -al'
+    - run: 'ls -al'
 
     - name: Install Dependencies
-      run: 'pip install -r requirements.txt'
+    - run: 'pip install -r requirements.txt'
     
     - name: Start db
-      run: 'python db.py'
+    - run: 'python db.py'
 
     - name: Start application
-      run: 'python app.py'
+    - run: 'python app.py'
 
     #- name: Test application
-      #run: 'mvn test'
+    #- run: 'mvn test'
