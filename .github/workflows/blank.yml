@@ -4,20 +4,25 @@ on:
   push:
     branches:
       - main
-      - jenk
+      
   pull_request:
-    types: [opened, reopened]
+    types: [opened, synchronize]
+    
   workflow_dispatch:
+  
 jobs:
   my_first_job:
     runs-on: ubuntu-latest
+    
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      
     - name: Install Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.11'
+        
     - name: Show Python version
       run: 'python -v'
     - name: Show directory
@@ -28,7 +33,6 @@ jobs:
       run: 'pip install -r requirements.txt'
     - name: Start db
       run: 'python db.py'
-    - name: Start application
-      run: 'python app.py >/dev/null'
+    
     #- name: Test application
     #  run: 'mvn test'
