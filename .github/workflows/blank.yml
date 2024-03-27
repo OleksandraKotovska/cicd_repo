@@ -25,14 +25,22 @@ jobs:
         
     - name: Show Python version
       run: 'python -v'
+      
     - name: Show directory
       run: 'pwd'
+      
     - name: List files
       run: 'ls -al'
+      
     - name: Install Dependencies
       run: 'pip install -r requirements.txt'
-    - name: Start db
-      run: 'python db.py'
-    
-    #- name: Test application
-    #  run: 'mvn test'
+      
+    - name: Adds default product data to the database
+      run: 'python db.py -a'
+
+    - name: Prints all product data to the console
+      run: 'python db.py -p'
+
+    - name: Run tests
+      run: echo "Tests to be added"
+      
